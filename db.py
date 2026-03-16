@@ -41,6 +41,9 @@ class Advertisement(Base):
         }
 
 
+    def __repr__(self):
+        return (f'<Advertisement (id = "{self.id}")>')
+
 async def init_orm():
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
